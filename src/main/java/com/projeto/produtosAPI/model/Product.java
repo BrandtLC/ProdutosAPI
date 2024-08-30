@@ -21,7 +21,18 @@ public class Product {
     private Double preco;
     private Boolean ativo;
     
-    public UUID getId() { 	
+    public Product() {
+		super();
+	}
+    
+	public Product(UUID id, String nome, Double preco, Boolean ativo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.preco = preco;
+		this.ativo = ativo;
+	}
+	public UUID getId() { 	
     	return this.id;
     }
 	public String getNome() {

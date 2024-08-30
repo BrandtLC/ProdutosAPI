@@ -1,5 +1,6 @@
 package com.projeto.produtosAPI.repository;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +10,5 @@ import com.projeto.produtosAPI.model.Product;
 
 @Repository
 public interface ProductRepo extends JpaRepository<Product, UUID> {
-	
+	List<Product> findAllByAtivo(boolean ativo);
 }

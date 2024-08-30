@@ -24,8 +24,15 @@ public class ProductService {
 	 * Retorna todos os produtos cadastrados
 	 * @return
 	 */
-	public List<ProductDTO> retrieveAll() {
-		return productRepo.findAll()
+	public List<ProductDTO> retrieveAll(Boolean active) {
+		List<Product> products;
+		if(active) {
+			products = productRepo.findAllByAtivo(active);
+		} else {
+			products = productRepo.findAll();
+		}
+		
+		return products
 				.stream().map(c -> new ProductDTO(c)).toList();
 	}
 	
