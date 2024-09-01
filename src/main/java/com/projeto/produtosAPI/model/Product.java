@@ -1,13 +1,13 @@
 package com.projeto.produtosAPI.model;
 
+import java.util.List;
 import java.util.UUID;
-
-import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +20,9 @@ public class Product {
     private String nome;
     private Double preco;
     private Boolean ativo;
+    
+    @ManyToMany(mappedBy = "products")
+    private List<Order> orders;
     
     public Product() {
 		super();
