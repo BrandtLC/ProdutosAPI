@@ -38,7 +38,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @RestController
 @RequestMapping(value = "api/products")
-@Tag(name = "ProductApi Doc")
+@Tag(name = "Product Doc")
 public class ProductController {
 
 	ProductService service;
@@ -86,7 +86,7 @@ public class ProductController {
 		return new ResponseEntity<ProductDTO>(createdProduct, HttpStatus.CREATED);
 	}
 	
-	@Operation(summary = "Realiza update de um novo produto.")
+	@Operation(summary = "Realiza update de um  produto.")
 	@ApiResponses(value = {
 
 			@ApiResponse(responseCode = "200", description = "Produto atualizado com sucesso"),
